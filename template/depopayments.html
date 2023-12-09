@@ -1,0 +1,59 @@
+{% extends 'depobase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Payments</h3>
+		</div>
+	</div>
+	<div class="contact-content">
+		<div class="container-fluid">
+			<div style="margin-bottom: 100px">
+				<div class="container-fluid">
+					<div class="col-md-12 contact-part">
+						<div class="form">
+							<table border="1">
+								<tr style="background-color: #ffcc00">
+									<th>Student Id</th>
+									<th>Student Name</th>
+									<th>Student Age</th>
+									<th>Student Address</th>
+									<th>Student Gender</th>
+									<th>Institute</th>
+									<th>From</th>
+									<th>To</th>
+									<th>Card Type</th>
+									<th>Paid amount</th>
+								</tr>
+								{% for d in data %}
+								<tr>
+									<td>{{d.0}}</td>
+									<td>{{d.1}}</td>
+									<td>{{d.2}}</td>
+									<td>{{d.3}}</td>
+									<td>{{d.4}}</td>
+									<td>{{d.18}}</td>
+									<td>{{d.12}}</td>
+									<td>{{d.13}}</td>
+									<td>{{d.19}}</td>
+									<td>{{d.20}}</td>
+								</tr>
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		{% endblock %}
+	</div>
+</div>

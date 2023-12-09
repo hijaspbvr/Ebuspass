@@ -1,0 +1,68 @@
+{% extends 'institutebase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container-fluid">
+			<h3>Affiliations</h3>
+		</div>
+	</div>
+	<div class="contact-content">
+		<div class="container-fluid">
+			<div class="col-md-12 contact-part">
+				<div class="form">
+					<form method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<input
+							type="text"
+							required=""
+							class="textbox"
+							id="txtType"
+							name="txtType"
+							placeholder="Type of affiliation"
+						/><br /><br />
+						<input
+							type="file"
+							required=""
+							class="textbox"
+							name="txtFile"
+							id="txtFile"
+						/>
+
+						<div class="submit">
+							<input
+								type="submit"
+								id="btnSubmit"
+								name="btnSubmit"
+								value="Submit "
+							/>
+						</div>
+					</form>
+				</div>
+				<div>
+					<table border="1">
+						<tr style="background-color: #ffcc00">
+							<th>Id</th>
+							<th>Affiliation Type</th>
+						</tr>
+						{% for d in data %}
+						<tr>
+							<td>{{d.0}}</td>
+							<td>{{d.2}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'studentbase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Details</h3>
+		</div>
+	</div>
+	<div class="contact-content">
+		<div class="container-fluid">
+			<div class="col-md-12 contact-part">
+				<div class="form">
+					<form method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<!--                                                            <br><br><span style="color: #999999;">Select institute</span><br><br>-->
+						<select id="txtFrom" name="txtFrom">
+							<option>Select Source</option>
+							{% for d in stop %}
+							<option>{{d.1}}</option>
+							{% endfor %}
+						</select>
+						<!--                                                            <br><br><span style="color: #999999;">Select institute</span><br><br>-->
+						<select id="txtTo" name="txtTo">
+							<option>Select Destination</option>
+							{% for d in stop %}
+							<option>{{d.1}}</option>
+							{% endfor %}
+						</select>
+						<!--                                                            <br><br><span style="color: #999999;">Select institute</span><br><br>-->
+						<select id="txtCard" name="txtCard">
+							<option>Select Card type</option>
+							{% for d in card %}
+							<option value="{{d.0}}">{{d.1}}</option>
+							{% endfor %}
+						</select>
+						<input
+							type="number"
+							required=""
+							class="textbox"
+							name="txtAadhar"
+							id="txtAadhar"
+							placeholder="Aadhar number"
+						/>
+						<input
+							type="file"
+							required=""
+							class="textbox"
+							name="txtFile"
+							id="txtFile"
+						/>
+						<div class="submit">
+							<input
+								type="submit"
+								id="btnSubmit"
+								name="btnSubmit"
+								value="Submit "
+							/>
+						</div>
+					</form>
+				</div>
+				<div>
+					<table border="1">
+						<tr style="background-color: #ffcc00">
+							<th>Id</th>
+							<th>From</th>
+							<th>To</th>
+							<th>Card Type</th>
+							<th>Status</th>
+						</tr>
+						{% for d in data %}
+						<tr>
+							<td>{{d.0}}</td>
+							<td>{{d.2}}</td>
+							<td>{{d.3}}</td>
+							<td>{{d.8}}</td>
+							<td>{{d.7}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

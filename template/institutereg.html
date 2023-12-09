@@ -1,0 +1,79 @@
+{% extends 'commonbase.html' %} {% block content %}
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Institute Registration</h3>
+		</div>
+	</div>
+	<div class="contact-content" style="margin-left: -950px">
+		<div class="container">
+			<div class="col-md-6 contact-part">
+				<div class="form">
+					<form method="post">
+						{% csrf_token %}
+						<input
+							type="text"
+							class="textbox"
+							required=""
+							name="txtName"
+							id="txtName"
+							pattern="[a-zA-Z ]+"
+							placeholder="Name"
+						/>
+
+						<div class="clearfix"></div>
+						<div>
+							<textarea
+								placeholder="Address"
+								required=""
+								id="txtAddress"
+								name="txtAddress"
+							></textarea>
+						</div>
+						<div class="clearfix"></div>
+
+						<input
+							type="email"
+							class="textbox"
+							required=""
+							id="txtEmail"
+							name="txtEmail"
+							placeholder="Email"
+						/>
+
+						<input
+							type="text"
+							class="textbox"
+							required=""
+							id="txtNumber"
+							name="txtNumber"
+							pattern="[6789][0-9]{9}"
+							maxlength="10"
+							placeholder="Phone number"
+						/>
+						<input
+							type="password"
+							class="textbox"
+							required=""
+							id="txtPassword"
+							name="txtPassword"
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+							placeholder="Password"
+						/>
+						<div class="submit">
+							<input
+								type="submit"
+								id="btnSubmit"
+								name="btnSubmit"
+								value="Submit "
+							/>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

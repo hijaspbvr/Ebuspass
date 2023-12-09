@@ -1,0 +1,50 @@
+{% extends 'institutebase.html' %}
+{% block content %}
+<div  class="contact" id="contact" >
+    <div class="contact-head">
+        <div class="container">
+               <h3>Welcome</h3>	
+       </div>
+   </div>
+   
+<div class="contact-content" style="margin-left: -950px;">
+<div class="container">
+   <div class="col-md-6 contact-part">
+         <div class="form">				
+                     <form method="post">
+                        {% csrf_token %}  
+                                                   <span style="color: #999999;">Select course</span><br><br>
+                                                   <select id="crs" name="crs">
+                                                       <option>Select</option>
+                                                       {% for d in course %}
+                                                       <option value="{{d.0}}">{{d.1}}</option>
+                                                       {% endfor %}
+                                                   </select>
+                                                   <div class="submit"> 
+                       <input type="submit" id="btnSubmit" name="btnSubmit" value="Update" />
+                                                   </div>
+                   </form>
+               </div>
+                   <div>
+       <table border="1">
+           <tr style="background-color: #ffcc00">
+               <th>Course Id</th>
+               <th>Course</th>
+               
+               <th colspan="2"></th>
+           </tr>
+           {% for d in data %}
+           <tr>
+                <td>{{d.0}}</td>
+                <td>{{d.1}}</td>
+           </tr>
+           {% endfor %}
+       </table>
+   </div>
+            </div>	
+        <div class="clear"> </div>
+    </div>	
+</div> 		
+</div> 		
+</div>
+{% endblock %}

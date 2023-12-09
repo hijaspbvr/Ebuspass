@@ -1,0 +1,86 @@
+<!--
+Author: H-roots
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>E-BUS PASS</title>
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> 
+        addEventListener("load", function() { 
+            setTimeout(hideURLbar, 0); 
+        }, false); 
+        function hideURLbar(){ 
+            window.scrollTo(0,1); 
+        } 
+    </script>
+    <script src="../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../static/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="../static/js/move-top.js"></script>
+    <script type="text/javascript" src="../static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){		
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-section2">
+        <div class="header-top bg">
+            <div class="container">
+                <!-- Logo -->
+                <div class="logo two">
+                    <h1 style="color: #3498db; font-size: 3em;">E-BUS PASS</h1>
+                </div>
+                <!-- Top Navigation -->
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="sub-header two" style=" width:1100px;">
+            <div class="top-nav">
+                <span class="menu two"> </span>
+                <ul>
+                    <li><a href="/studenthome">Home</a></li>
+                    <li><a href="/studentdetails">Concession</a></li>
+                    <li><a href="/studentpayment">Payment</a></li>
+                    <li><a href="/login">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- /Header -->
+
+    <!-- Content Block -->
+    {% block content %}
+    {% endblock %}
+    <!-- /Content Block -->
+    
+    <!-- Footer -->
+    <div class="copy-right-section">
+        <div class="container">
+            <div class="col-md-6 copy-right">
+                <p>Design by &nbsp;<a href="#">H-roots</a></p>
+            </div>
+            <div class="col-md-6 social-icons">
+                <ul class="soc_icons2">
+                    <li><a href="#"><i class="icon_4"></i></a></li>
+                    <li><a href="#"><i class="icon_5"></i></a></li>
+                    <li><a href="#"><i class="icon_6"></i></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Footer -->
+</body>
+</html>

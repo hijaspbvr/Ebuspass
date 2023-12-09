@@ -1,0 +1,44 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<div  class="contact" id="contact" >
+    <div class="contact-head">
+        <div class="container">
+               <h3>Course</h3>	
+       </div>
+   </div>
+<div class="contact-content" style="margin-left: -950px;">
+<div class="container">
+   <div class="col-md-6 contact-part">
+         <div class="form">				
+                    <form method="post">   
+                        {% csrf_token %}                   
+                        <input type="text" required="" class="textbox" id="txtCourse" name="txtCourse" pattern="[a-zA-Z ]+" placeholder="Course">	
+                        <div class="submit"> 
+                            <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit " />
+                        </div>
+                   </form>
+               </div>
+                   <div class="clear"></div>
+                   <div>
+       <table border="1">
+           <tr style="background-color: #ffcc00">
+               <th>Course Id</th>
+               <th>Course</th>
+               <th colspan="2"></th>
+           </tr>
+           {% for d in data %}
+                <tr>
+                    <td>{{d.0}}</td>
+                    <td>{{d.1}}</td>
+                    <td><a href="/admincoursedelete?id={{d.0}}">Delete</a></td>
+                </tr>
+           {% endfor %}
+       </table>
+   </div>
+            </div>	
+        <div class="clear"> </div>
+    </div>	
+   
+</div> 			
+</div>	
+{% endblock %}

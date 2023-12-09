@@ -1,0 +1,101 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>E-BUSPASS | ADMIN PANEL</title>
+<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
+<!-- Custom Theme files -->
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+<!--Custom Theme files-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</script>
+<script src="../static/js/jquery-1.8.3.min.js"></script>
+<script src="../static/js/modernizr.custom.js"></script>
+
+ <!--start-smoth-scrolling-->
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+	<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!--webfonts-->	
+</head>
+<body>
+<!--header-->
+	<div class="header-section2">
+		<div class="header-top bg">
+			<div class="container">
+			<!--logo-->
+			   <div class="logo two">
+<!--				<a href="index.html"><img src="images/logo.png" alt=""></a>-->
+                               <h1 style="color:yellow; font-size:500%; background-color: #CCC;">E-BUS PASS</h1>
+				</div>
+			<!--top-nav-->
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="sub-header two"  style="margin-left: -80px; width:1150px;">
+			<div class="top-nav">
+					<span class="menu two"> </span>
+					<ul>
+                        <li><a href="/adminhome">Home</a></li>
+                        <li><a href="/admindepo">Depo</a></li>
+                   
+                        <li><a href="/admininstitute">Institutes</a></li>
+                        <li><a href="/admincardtype">Card Type</a></li>
+                        <li><a href="/adminstop">Stop</a></li>
+                        <li><a href="/adminrate">Rate</a></li>
+                        <li><a href="/login">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+				<div class="clearfix"> </div>
+		<!-- script-for-menu -->
+				<script>
+					$(document).ready(function(){
+						$("span.menu").click(function(){
+							$(".top-nav ul").slideToggle(200);
+						});
+					});
+				</script>
+			<div class="clearfix"> </div>
+	</div>
+<!--/header-->
+{% block content %}
+
+    {% endblock %}
+    
+		<div class="copy-right-section">
+            <div class="container">
+                <div class="col-md-6 copy-right">
+                    <p>Design by &nbsp;<a href="">H-roots</a></p>
+                </div>
+                <div class="col-md-6 social-icons">
+                    <ul class="soc_icons2">
+                                        <li><a href="#"><i class="icon_4"></i></a></li>
+                                        <li><a href="#"><i class="icon_5"></i></a></li>
+                                        <li><a href="#"><i class="icon_6"></i></a></li>
+                                        <div class="clearfix"> </div>
+                                    </ul>
+
+                </div>
+            </div>
+    </div>
+</body>
+</html>

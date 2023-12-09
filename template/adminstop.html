@@ -1,0 +1,72 @@
+{% extends 'adminbase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Stop</h3>
+		</div>
+	</div>
+	<div class="contact-content">
+		<div class="container-fluid">
+			<div class="col-md-12 contact-part">
+				<div class="form">
+					<form method="post">
+						{% csrf_token %}
+						<input
+							type="text"
+							required=""
+							class="textbox"
+							id="txtStop"
+							name="txtStop"
+							placeholder="Stop name"
+						/>
+						<br /><br /><span style="color: #999999">Select Depo</span
+						><br>						<select id="depo" name="depo">
+							<option>Select Depo</option>
+							{% for d in data1 %}
+							<option value="{{d.0}}">{{d.1}}</option>
+							{% endfor %}
+						</select>
+
+						<div class="submit text-center">
+							<input
+								type="submit"
+								id="btnSubmit"
+								name="btnSubmit"
+								value="Submit "
+							/>
+						</div>
+					</form>
+				</div>
+				<div>
+					<table border="1">
+						<tr style="background-color: #ffcc00">
+							<th>Stop Id</th>
+							<th>Stop</th>
+							<th>Depo</th>
+							<th></th>
+						</tr>
+						{% for d in data %}
+						<tr>
+							<td>{{d.0}}</td>
+							<td>{{d.1}}</td>
+							<td>{{d.2}}</td>
+							<td><a href="/adminstopdelete?id={{d.0}}">Delete</a></td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

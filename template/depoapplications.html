@@ -1,0 +1,104 @@
+{% extends 'depobase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Applications</h3>
+		</div>
+	</div>
+	<div class="contact-content" >
+		<div class="container-fluid">
+			<div class="col-md-12 contact-part">
+				<div class="form">
+					<table border="1">
+						<tr style="background-color: #ffcc00">
+							<th>Student Id</th>
+							<th>Student Name</th>
+							<th>Student Age</th>
+							<th>Student Address</th>
+							<th>Student Gender</th>
+							<th>Student Contact</th>
+							<th>Institute</th>
+							<th>From</th>
+							<th>To</th>
+							<th>Card Type</th>
+							<th colspan="2"></th>
+						</tr>
+						{% for d in data %}
+						<tr>
+							<td>{{d.0}}</td>
+							<td>{{d.1}}</td>
+							<td>{{d.2}}</td>
+							<td>{{d.3}}</td>
+							<td>{{d.4}}</td>
+							<td>{{d.7}}</td>
+							<td>{{d.18}}</td>
+							<td>{{d.12}}</td>
+							<td>{{d.13}}</td>
+							<td>{{d.19}}</td>
+							<td>
+								<a
+									href="/depoapplicationapprove?id={{d.10}}&s=approved&phone={{d.7}}"
+									><span style="color: red">Approve</span></a
+								>
+							</td>
+							<td>
+								<a
+									href="/depoapplicationapprove?id={{d.10}}&s=rejected&phone={{d.7}}"
+									><span style="color: red">Reject</span></a
+								>
+							</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+
+			<div style="margin-top: 100px; margin-bottom: 100px">
+				<div class="container-fluid">
+					<div class="col-md-12 contact-part">
+						<div class="form">
+							<h1>Approved applications</h1>
+							<table border="1">
+								<tr style="background-color: #ffcc00">
+									<th>Student Id</th>
+									<th>Student Name</th>
+									<th>Student Age</th>
+									<th>Student Address</th>
+									<th>Student Gender</th>
+									<th>Institute</th>
+									<th>From</th>
+									<th>To</th>
+									<th>Card Type</th>
+								</tr>
+								{% for d in data1 %}
+								<tr>
+									<td>{{d.0}}</td>
+									<td>{{d.1}}</td>
+									<td>{{d.2}}</td>
+									<td>{{d.3}}</td>
+									<td>{{d.4}}</td>
+									<td>{{d.18}}</td>
+									<td>{{d.12}}</td>
+									<td>{{d.13}}</td>
+									<td>{{d.19}}</td>
+								</tr>
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		{% endblock %}
+	</div>
+</div>

@@ -1,0 +1,56 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div  class="contact" id="contact" >
+    <div class="contact-head">
+        <div class="container">
+               <h3>Card Type</h3>	
+       </div>
+   </div>
+<div class="contact-content">
+<div class="container-fluid">
+   <div class="col-md-12 contact-part">
+         <div class="form">				
+                     <form method="post">
+                        {% csrf_token %}                  
+                        <input type="text" required="" class="textbox" id="txtCardType" name="txtCardType" placeholder="Card Type">	
+                        <input type="number" required="" class="textbox" name="txtDays" id="txtDays" placeholder="Number of days">
+                        <div class="submit text-center"> 
+                            <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit " />
+                        </div>
+                   </form>
+               </div>
+                   <div class="clear"> </div>
+                   <div>
+       <table border="1">
+           <tr style="background-color: #ffcc00">
+               <th>Card Id</th>
+               <th>Card Type</th>
+               <th>Number of days</th>
+               <th colspan="2"></th>
+           </tr>
+           {% for d in data %}
+                <tr>
+                    <td>{{d.0}}</td>
+                    <td>{{d.1}}</td>
+                    <td>{{d.2}}</td>
+                    <td><a href="/admincarddelete?id={{d.0}}">Delete</a></td>
+                </tr>
+           {% endfor %}
+       </table>
+   </div>
+    </div>	
+        <div class="clear"> </div>
+    </div>	
+   
+</div> 			
+</div>	
+{% endblock %}	

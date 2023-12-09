@@ -1,0 +1,38 @@
+{% extends 'studentbase.html' %}
+{% block content %}
+<div  class="contact" id="contact" >
+    <div class="contact-head">
+        <div class="container">
+               <h3>Welcome</h3>	
+       </div>
+   </div>
+   
+<div class="contact-content" style="margin-left: -950px;">
+<div class="container">
+   <div class="col-md-6 contact-part">
+         <div class="form">				
+                     <form method="post">
+                        {% csrf_token %}  
+                        {% for d in data %}
+                                                   Name<br><input type="text" required="" readonly="" class="textbox" name="txtName" id="txtName" placeholder="Name" value="{{d.1}}">
+                                                   <br><br>Age<br><input type="number" required="" readonly="" class="textbox" id="txtAge" name="txtAge" placeholder="Age" value="{{d.2}}">	
+                                                   <br><br>Gender<br><input type="text" required="" readonly="" class="textbox" id="txtGender" name="txtGender" placeholder="Age" value="{{d.3}}">	
+                                                   <div class="clearfix"> </div>
+                                                   <div>
+                                                       <br><br>Address<br><textarea placeholder="Address" readonly="" required="" id="txtAddress" name="txtAddress"> {{d.4}}</textarea>
+                                                   </div>
+                                                   <div class="clearfix"> </div>
+                                                   <br><br>Name of father<br><input type="text" class="textbox" readonly="" required="" id="txtFather" name="txtFather" placeholder="Name of father/guardian" value="{{d.5}}">	
+                                                   <br><br>Email<br><input type="email" class="textbox" readonly="" required="" id="txtEmail" name="txtEmail" placeholder="Email" value="{{d.6}}">	
+                                                   <br><br>Contact no<br><input type="number" class="textbox" readonly="" required="" id="txtNumber" name="txtNumber" placeholder="Phone number" value="{{d.7}}">
+                                                   <br><br>College Admission Number<br><input type="number" class="textbox" readonly="" required="" id="txtAdmn" name="txtAdmn" placeholder="Admission Number" value="{{d.8}}">
+                                             {% endfor %}     
+                   </form>
+               </div>
+            </div>	
+        <div class="clear"> </div>
+    </div>	
+</div> 		
+</div> 		
+</div>
+{% endblock %}

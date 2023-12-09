@@ -1,0 +1,102 @@
+{% extends 'studentbase.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS styles for an attractive design */
+        .contact {
+            background: linear-gradient(135deg, #3498db, #e74c3c);
+            color: #270b0b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            margin: 0;
+        }
+
+        .contact-content {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        th {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #e67e22;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+<div class="contact" id="contact">
+    <div class="container">
+        <h3>Payment</h3>
+    </div>
+    <div class="contact-content">
+        <div class="container">
+            <div class="col-md-12 contact-part">
+                <div class="form">
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Card Type</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        {% for d in data %}
+                        <tr>
+                            <td>{{d.0}}</td>
+                            <td>{{d.6}}</td>
+                            <td>{{d.2}}</td>
+                            <td>{{d.3}}</td>
+                            <td>{{d.4}}</td>
+                            <td>{{d.5}}</td>
+                            <td><a href="/studentcardgenerator?id={{d.0}}">Generate E card</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+{% endblock %}

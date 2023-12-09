@@ -1,0 +1,81 @@
+{% extends 'adminbase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Institutes</h3>
+		</div>
+	</div>
+	<h1>To be approved</h1>
+	<div class="contact-content">
+		<div class="container-fluid">
+			<div class="col-md-12 contact-part">
+				<div class="form">
+					<table border="1">
+						<tr style="background-color: #ffcc00">
+							<th>Institute Id</th>
+							<th>Institute Name</th>
+							<th>Institute Address</th>
+							<th>Email</th>
+							<th>Contact</th>
+							<th colspan="2"></th>
+						</tr>
+						{% for d in data %}
+						<tr>
+							<td>{{d.0}}</td>
+							<td>{{d.1}}</td>
+							<td>{{d.2}}</td>
+							<td>{{d.4}}</td>
+							<td>{{d.3}}</td>
+							<td>
+								<a href="/admininstitutedelete?id={{d.4}}&status=1">Approve</a>
+							</td>
+							<td>
+								<a href="/admininstitutedelete?id={{d.4}}&status=-1">Reject</a>
+							</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+
+			<div style="margin-top: 100px; margin-bottom: 100px">
+				<div class="container-fluid">
+					<div class="col-md-12 contact-part">
+						<div class="form">
+							<h1>Approved institutes</h1>
+							<table border="1">
+								<tr style="background-color: #ffcc00">
+									<th>Institute Id</th>
+									<th>Institute Name</th>
+									<th>Institute Address</th>
+									<th>Email</th>
+									<th>Contact</th>
+								</tr>
+								{% for d in data1 %}
+								<tr>
+									<td>{{d.0}}</td>
+									<td>{{d.1}}</td>
+									<td>{{d.2}}</td>
+									<td>{{d.3}}</td>
+									<td>{{d.4}}</td>
+								</tr>
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		{% endblock %}
+	</div>
+</div>

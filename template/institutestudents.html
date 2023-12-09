@@ -1,0 +1,92 @@
+{% extends 'institutebase.html' %}
+{% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div  class="contact" id="contact" >
+    <div class="contact-head">
+        <div class="container">
+               <h3>Students</h3>	
+       </div>
+   </div>
+<h1>To be approved</h1>
+<div class="contact-content">
+<div class="container-fluid">
+   <div class="col-md-12 contact-part">
+         <div class="form">				
+                     <table border="1">
+           <tr style="background-color: #ffcc00">
+               <th>Student Id</th>
+               <th>Student Name</th>
+               <th>Student Age</th>
+               <th>Student Address</th>
+               <th>Student Gender</th>
+               <th>Father's Name</th>
+               <th>Email</th>
+               <th>Contact</th>
+               
+               <th colspan="2"></th>
+           </tr>
+           {% for d in data %}
+           <tr>
+               <td>{{d.0}}</td>
+               <td>{{d.1}}</td>
+               <td>{{d.2}}</td>
+               <td>{{d.3}}</td>
+               <td>{{d.4}}</td>
+               <td>{{d.5}}</td>
+               <td>{{d.6}}</td>
+               <td>{{d.7}}</td>
+               <td><a href="/institutestudentapprove?id={{d.6}}"><span style="color:red;">Approve</span></a></td><td><a href="institutestudentreject?id={{d.6}}"><span style="color:red;">Reject</span></a></td>
+            </tr>
+            {% endfor %}
+       </table>
+               </div>
+               </div>
+          
+                   <div style="margin-left: -15px; margin-top: 100px; margin-bottom: 100px;">
+
+                       
+<div class="container-fluid">
+   <div class="col-md-12 contact-part">
+         <div class="form">	
+                            <h1>Approved institutes</h1>
+                     <table border="1">
+           <tr style="background-color: #ffcc00">
+               <th>Student Id</th>
+               <th>Student Name</th>
+               <th>Student Age</th>
+               <th>Student Address</th>
+               <th>Student Gender</th>
+               <th>Father's Name</th>
+               <th>Email</th>
+               <th>Contact</th>
+               
+           </tr>
+           {% for d in data1 %}
+           <tr>
+               <td>{{d.0}}</td>
+               <td>{{d.1}}</td>
+               <td>{{d.2}}</td>
+               <td>{{d.3}}</td>
+               <td>{{d.4}}</td>
+               <td>{{d.5}}</td>
+               <td>{{d.6}}</td>
+               <td>{{d.7}}</td>
+               
+            </tr>
+            {% endfor %}
+       </table>
+               </div>
+            </div>	
+        <div class="clear"> </div>
+    </div>	
+</div> 			
+</div>	
+{% endblock %}

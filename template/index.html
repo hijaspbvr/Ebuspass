@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>E bus pass</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Styles -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Google Fonts - Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+    <!-- jQuery and Modernizr -->
+    <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+
+    <!-- Smooth Scrolling Scripts -->
+    <script src="{% static 'js/move-top.js' %}"></script>
+    <script src="{% static 'js/easing.js' %}"></script>
+
+    <!-- Custom CSS for Enhancements -->
+    <style>
+        body {
+            background: linear-gradient(to right, #3498db, #1abc9c);
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1em 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-align: center;
+            margin: 1em 0;
+        }
+
+        .logo h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #fc8f8f;
+        }
+
+        .top-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .top-nav li {
+            float: left;
+        }
+
+        .top-nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .top-nav li a:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 2em 0;
+            color: #333;
+        }
+
+        .copy-right-section {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1em 0;
+            color: white;
+            text-align: center;
+        }
+
+        .copy-right a {
+            color: #FFEB3B;
+        }
+
+        .social-icons {
+            margin-top: 1em;
+        }
+
+        .soc_icons2 li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header-section">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1>E-BUS PASS</h1>
+            </div>
+
+            <!-- Navigation -->
+            <div class="sub-header">
+                <div class="top-nav">
+                    <span class="menu"> </span>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/studentreg">Student Registration</a></li>
+                        <li><a href="/institutereg">Institute Registration</a></li>
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Header -->
+
+    <!-- Main Content -->
+    <div class="main-content container">
+        <!-- Your main content goes here -->
+        <!-- Example: -->
+        <h2>Welcome to E-Bus Pass</h2>
+        <p>The E-Bus Pass project for Kerala State Road Transport Corporation (KSRTC provides a digital platform for generating bus concession cards. This initiative streamlines the process of obtaining travel passes by leveraging electronic systems. Users can access the platform to apply for, renew, and manage their bus concession cards online, reducing paperwork and administrative hassles. The system integrates with KSRTC databases to ensure accurate and efficient card generation. With a user-friendly interface, the project enhances the accessibility and convenience of public transportation, facilitating seamless travel experiences for commuters while embracing the benefits of digital technology.</p>
+    </div>
+    <!-- /Main Content -->
+
+    <!-- Footer -->
+    <div class="copy-right-section">
+        <div class="container">
+            <div class="col-md-6 copy-right">
+                <p>Design by &nbsp;<a href="">H-roots</a></p>
+            </div>
+            <div class="col-md-6 social-icons">
+                <ul class="soc_icons2">
+                    <li><a href="#"><i class="icon_4"></i></a></li>
+                    <li><a href="#"><i class="icon_5"></i></a></li>
+                    <li><a href="#"><i class="icon_6"></i></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /Footer -->
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        $(document).ready(function(){
+            $("span.menu").click(function(){
+                $(".top-nav ul").slideToggle(200);
+            });
+        });
+    </script>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){		
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+</body>
+</html>

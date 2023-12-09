@@ -1,0 +1,81 @@
+{% extends 'adminbase.html' %} {% block content %}
+<style>
+	th,
+	td {
+		padding: 20px;
+	}
+	table {
+		width: 100%;
+	}
+</style>
+<div class="contact" id="contact">
+	<div class="contact-head">
+		<div class="container">
+			<h3>Route</h3>
+		</div>
+	</div>
+	<div class="contact-content">
+		<div class="container-fluid">
+			<div class="col-md-12 contact-part">
+				<div class="form">
+					<form method="post">
+						{% csrf_token %}
+						<br /><span style="color: #999999">Select Sourse</span
+						><br />
+						<select id="txtFrom" name="txtFrom">
+							<option>From</option>
+							{% for d in stop %}
+							<option value="{{d.1}}">{{d.1}}</option>
+							{% endfor %}
+						</select>
+						<br /><span style="color: #999999">Select destination</span
+						><br />
+						<select id="txtTo" name="txtTo">
+							<option>To</option>
+							{% for d in stop %}
+							<option value="{{d.1}}">{{d.1}}</option>
+							{% endfor %}</select
+						><input
+							type="number"
+							required=""
+							class="textbox"
+							name="txtCharge"
+							id="txtCharge"
+							placeholder="Charge"
+						/>
+						<div class="submit">
+							<input
+								type="submit"
+								id="btnSubmit"
+								name="btnSubmit"
+								value="Submit "
+							/>
+						</div>
+					</form>
+				</div>
+				<div>
+					<table border="1">
+						<tr style="background-color: #ffcc00">
+							<th>Rate Id</th>
+							<th>From</th>
+							<th>To</th>
+							<th>Charge</th>
+							<th colspan="2"></th>
+						</tr>
+						{% for d in data %}
+						<tr>
+							<th>{{d.0}}</th>
+							<th>{{d.1}}</th>
+							<th>{{d.2}}</th>
+							<th>{{d.3}}</th>
+							<th><a href="/adminratedelete?id={{d.0}}">Delete</a></th>
+						</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

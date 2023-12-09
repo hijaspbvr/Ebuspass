@@ -1,0 +1,27 @@
+{% extends 'commonbase.html' %}
+{% block content %}
+<div  class="contact" id="contact" >
+    <div class="contact-head">
+        <div class="container">
+               <h3>Login</h3>	
+       </div>
+   </div>
+<div class="contact-content" style="margin-left: -950px;">
+<div class="container">
+   <div class="col-md-6 contact-part">
+         <div class="form">				
+                     <form method="post">
+                        {% csrf_token %}
+                        <input type="email" required="" class="textbox" id="txtEmail" name="txtEmail" placeholder="Email">	
+                        <input type="password" required="" class="textbox" name="txtPassword" id="txtPassword" placeholder="Password">
+                        <div class="submit"> 
+                            <input type="submit" id="btnSubmit" name="btnSubmit" value="Login " />
+                        </div>
+                   </form>
+               </div>
+            </div>	
+        <div class="clear"> </div>
+    </div>	
+</div> 			
+</div>	
+{% endblock %}
